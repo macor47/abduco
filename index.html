@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Abduco Centar | Premium Ugostiteljski i Vrtni Namještaj</title>
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Očišćen i pravilan link za Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#000000",
+            "secondary": "#775a19",
+            "secondary-container": "#fed488",
+            "on-secondary-container": "#785a1a",
+            "tertiary": "#735c00",
+            "tertiary-container": "#cba72f",
+            "on-tertiary-container": "#4e3d00",
+            "surface-dark": "#121316",
+            "surface-dark-elevated": "#1A1C21",
+            "surface-canvas": "#FFFFFF",
+            "surface-subtle": "#F9FAFB",
+            "surface-card": "#FFFFFF",
+            "surface-container-low": "#f2f3fa",
+            "surface-container": "#eceef4",
+            "surface-container-high": "#e6e8ef",
+            "badge-hospitality-bg": "#121316",
+            "badge-hospitality-text": "#D4AF37",
+            "text-on-dark": "#F9FAFB",
+            "border-dark": "#2B2E36",
+            "border-light": "#E5E7EB",
+            "text-muted": "#6B7280"
+          },
+          fontFamily: {
+            display: ["Playfair Display", "serif"],
+            body: ["Plus Jakarta Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(18px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            pulseSlow: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0.5' }
+            },
+            popBounce: {
+              '0%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.3)', color: '#FFFFFF' },
+              '100%': { transform: 'scale(1)', color: '#D4AF37' }
+            }
+          },
+          animation: {
+            fadeInUp: 'fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            pulseSlow: 'pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            popBounce: 'popBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* KRITIČNO: Prisilno učitavanje ikona sprječava ispisivanje teksta umjesto slike */
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined' !important;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga' !important;
+      font-feature-settings: 'liga' !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @layer base {
+      body { overscroll-behavior-y: none; transition: background-color 0.3s ease; }
+      ::-webkit-scrollbar { display: none; }
+    }
+    .view-section { display: none; }
+    .view-section.active { display: block; }
+    .nav-link.active-nav {
+      color: #775a19 !important;
+      font-weight: 700 !important;
+      border-bottom: 2px solid #775a19;
+    }
+    
+    /* Range Slider Styling for Calculator */
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      background: transparent;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 26px;
+      width: 26px;
+      border-radius: 50%;
+      background: #D4AF37;
+      cursor: pointer;
+      margin-top: -9px;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      transition: transform 0.1s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.1);
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8px;
+      cursor: pointer;
+      background: #2B2E36;
+      border-radius: 4px;
+    }
+
+    /* CMS Glitch Fix */
+    #main-container { transition: padding 0.3s ease; }
+  </style>
+</head>
+<body class="bg-[#f8f9ff] font-body text-slate-800 antialiased selection:bg-secondary selection:text-white">
+
+  <!-- TOP BAR & NAVIGATION -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+    <!-- Mini notification bar -->
+    <div class="w-full bg-surface-dark text-text-on-dark text-xs py-2 px-4">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center gap-1 text-badge-hospitality-text font-semibold">
+            <span class="material-symbols-outlined text-[15px]">local_shipping</span>
+            Besplatna dostava iznad 500 €
+          </span>
+          <span class="hidden md:inline text-zinc-600">|</span>
+          <span class="hidden md:flex items-center gap-1 text-zinc-400">
+            <span class="material-symbols-outlined text-[15px]">pin_drop</span>
+            Velika Gorica, Zagrebačka 61
+          </span>
+        </div>
+        <div class="flex items-center gap-4">
+          <!-- CMS SECURE LOGIN TRIGGER -->
+          <button class="nav-trigger flex items-center gap-1 hover:text-badge-hospitality-text transition-colors text-zinc-500" data-target="cms" title="Pristup za vlasnika">
+            <span class="material-symbols-outlined text-[14px]">lock</span> Admin
+          </button>
+          
+          <a class="hidden sm:flex items-center gap-1 hover:text-badge-hospitality-text transition-colors" href="tel:+38516222222">
+            <span class="material-symbols-outlined text-[15px]">phone_in_talk</span>+385 1 622 2222
+          </a>
+          <span class="text-zinc-600">|</span>
+          <div class="flex items-center gap-1 text-zinc-400">
+            <span class="text-badge-hospitality-text font-bold">HR</span>
+            <span>/</span>
+            <span class="hover:text-white cursor-pointer">EN</span>
+            <span class="ml-1 text-white font-medium">EUR (€)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
+      <!-- Logo -->
+      <a href="#pocetna" class="nav-trigger flex items-center gap-3 shrink-0 cursor-pointer" data-target="pocetna">
+        <img alt="Abduco Logo" class="h-7 sm:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WjaDkgCSY2quhrn4HWW0sFOvjwT29hLm4fPKOnnN8ZKeL3z9U30uiNwQmk7CuWLYti_hHfe-hbO2AjK93Y_2jjeGIpc3IEh_R5XbgnttkcTu7fgP0yY5azRW8zTE0DPn71Y5DyOE590vnuWBjgP7Cuz0RWJqNbh4lLr_2wIz1v0qDwIcJgGFh_NlebbFomLr68zkg-xPMPZ-fsbbAzUeX_jUUVIIvbX8Ps_vNOYMNONMsqjAFzrCZhHGs"/>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-lg sm:text-xl tracking-tight text-primary leading-none uppercase">ABDUCO CENTAR</span>
+          <span class="text-[10px] sm:text-xs text-text-muted tracking-widest uppercase mt-0.5">stolice-stolovi.com</span>
+        </div>
+      </a>
+
+      <!-- Search Desktop -->
+      <div class="hidden lg:flex flex-1 max-w-md mx-4">
+        <div class="relative w-full">
+          <input class="w-full h-10 pl-4 pr-10 rounded-lg bg-surface-subtle border border-border-light text-sm focus:outline-none focus:ring-1 focus:ring-secondary transition-all" placeholder="Pretražite asortiman za terase..." type="text"/>
+          <button aria-label="Pretraži" class="absolute right-0 top-0 h-10 w-10 flex items-center justify-center text-text-muted hover:text-primary" type="button">
+            <span class="material-symbols-outlined text-[18px]">search</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a class="hidden md:inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-badge-hospitality-bg text-badge-hospitality-text text-xs uppercase tracking-wider font-semibold hover:bg-secondary hover:text-white transition-all shadow-sm" href="#ponuda-rfq">
+          <span class="material-symbols-outlined text-[16px]">request_quote</span>Zatraži Ponudu
+        </a>
+        <button aria-label="Popis želja" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-surface-container text-slate-700 transition-colors relative" type="button">
+          <span class="material-symbols-outlined text-[22px]">favorite</span>
+          <span class="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-secondary"></span>
+        </button>
+        <!-- Košarica -->
+        <button aria-label="Košarica" class="nav-trigger h-9 px-2.5 flex items-center gap-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-slate-800 transition-colors" type="button" data-target="kosarica">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span class="text-xs font-bold leading-none bg-primary text-white px-1.5 py-0.5 rounded-full" id="cart-badge-count">2</span>
+        </button>
+        
+        <!-- Mobile Menu -->
+        <button id="mobile-menu-btn" class="lg:hidden w-9 h-9 flex items-center justify-center rounded-lg text-slate-800 hover:bg-surface-container transition-colors" type="button" aria-label="Izbornik">
+          <span class="material-symbols-outlined text-[26px]" id="menu-icon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Desktop Category Strip -->
+    <div class="w-full bg-white border-t border-slate-100 hidden lg:block">
+      <div class="max-w-7xl mx-auto px-6">
+        <nav class="flex items-center gap-6 h-11 overflow-x-auto text-xs font-semibold uppercase tracking-wider">
+          <a href="#pocetna" class="nav-link nav-trigger py-2 text-slate-500 hover:text-slate-900 transition-colors active-nav" data-target="pocetna">Početna</a>
+          <a href="#stolice" class="nav-link nav-trigger py-2 text-slate-500 hover:text-slate-900 transition-colors" data-target="stolice">Stolice</a>
+          <a href="#stolovi" class="nav-link py-2 text-slate-500 hover:text-slate-900 transition-colors">Stolovi</a>
+          <a href="#kompleti" class="nav-link py-2 text-slate-500 hover:text-slate-900 transition-colors">Kompleti stolica i stola</a>
+          <a href="#jastuci" class="nav-link py-2 text-slate-500 hover:text-slate-900 transition-colors">Jastuci razni</a>
+          <a href="#ugostiteljska" class="nav-link py-2 text-slate-500 hover:text-slate-900 transition-colors">Ugostiteljska oprema</a>
+          <a href="#outlet" class="nav-link py-2 text-secondary font-bold hover:text-secondary-container transition-colors">Akcija / Outlet</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-2 shadow-xl animate-fadeInUp">
+      <a href="#pocetna" class="mobile-nav-link nav-trigger block px-3 py-2 rounded-md text-sm font-semibold uppercase text-secondary bg-surface-container-low" data-target="pocetna">Početna</a>
+      <a href="#stolice" class="mobile-nav-link nav-trigger block px-3 py-2 rounded-md text-sm font-semibold uppercase text-slate-700 hover:bg-surface-container-low" data-target="stolice">Stolice za terase</a>
+      <a href="#stolovi" class="block px-3 py-2 rounded-md text-sm font-semibold uppercase text-slate-700 hover:bg-surface-container-low">Stolovi i postolja</a>
+      <a href="#kompleti" class="block px-3 py-2 rounded-md text-sm font-semibold uppercase text-slate-700 hover:bg-surface-container-low">Setovi i garniture</a>
+      <a href="#kosarica" class="nav-trigger block px-3 py-2 rounded-md text-sm font-semibold uppercase text-slate-700 hover:bg-surface-container-low" data-target="kosarica">Košarica (2)</a>
+      <a href="#ponuda-rfq" class="block px-3 py-2 rounded-md text-sm font-bold uppercase text-badge-hospitality-text bg-surface-dark mt-2 text-center">Zatraži ponudu</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER (ROUTER) -->
+  <main id="main-container" class="w-full pt-[104px] lg:pt-[128px] min-h-screen">
+
+    <!-- ==================== VIEW 1: POČETNA ==================== -->
+    <div id="view-pocetna" class="view-section active animate-fadeInUp">
+      <!-- HERO -->
+      <section class="relative w-full overflow-hidden bg-surface-dark text-text-on-dark min-h-[580px] lg:min-h-[640px] flex items-center">
+        <div class="absolute inset-0 z-0 bg-cover bg-center scale-105 transition-transform duration-1000" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIquCyXV-fpZafuCYiIKyOyVSIFU0n7-1w_oAcMHHBrdRGAEtGGkTrRyYzPFQ-qc9t_-sHyv42V6J93kC5s-d-RjFUNmiBBoNeivKV_iG8cUQJXOtp1ooucrgu6OtIbM71EAsHNTUvC7Lag4EkJQglFd9bpeAA5Utph21nfciyl0YdkAhcaur-5I0ABI3x4mPhjtoOba33wDniH_IWXcan7IG_9zmaYLEqS3ILwcJaq1Lx2lt6jxzF')">
+          <div class="absolute inset-0 bg-gradient-to-r from-surface-dark/95 via-surface-dark/85 to-surface-dark/40"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-surface-dark/60"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-20 w-full">
+          <div class="max-w-3xl space-y-4 sm:space-y-6">
+            <div class="inline-flex items-center gap-2 bg-badge-hospitality-bg/90 border border-zinc-800 px-3 py-1.5 rounded-full">
+              <span class="w-2 h-2 rounded-full bg-badge-hospitality-text animate-pulseSlow"></span>
+              <span class="text-[11px] tracking-widest uppercase text-badge-hospitality-text font-bold">Hrvatski HoReCa Standard • Sezona 2025</span>
+            </div>
+
+            <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
+              Ekskluzivan Namještaj za Terase, Vile i Ugostiteljstvo
+            </h1>
+
+            <p class="text-sm sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+              Vrhunski namještaj od lijevanog aluminija i sintetiziranog ratana, stvoren za otpornost na morske soli, udare bure i najzahtjevnije HoReCa uvjete diljem Jadrana i kontinentalne Hrvatske.
+            </p>
+
+            <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <button class="nav-trigger inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-tertiary-container hover:bg-secondary text-surface-dark hover:text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-xl transition-all group" data-target="stolice">
+                <span>Istražite Kolekciju Stolica i Stolova</span>
+                <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </button>
+              <a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-surface-dark/80 border border-zinc-700 text-white font-semibold text-xs uppercase tracking-wider rounded-lg hover:bg-surface-dark-elevated transition-colors" href="#ponuda-rfq">
+                <span class="material-symbols-outlined text-[18px] text-badge-hospitality-text">architecture</span>
+                <span>Zatražite Ponudu i 3D Tlocrt</span>
+              </a>
+            </div>
+
+            <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-zinc-800 text-slate-300 text-xs">
+              <div>
+                <span class="font-display text-xl sm:text-2xl font-bold block text-badge-hospitality-text">15.000+</span>
+                <span class="text-zinc-400">Isporučenih sjedećih mjesta</span>
+              </div>
+              <div>
+                <span class="font-display text-xl sm:text-2xl font-bold block text-badge-hospitality-text">450+</span>
+                <span class="text-zinc-400">Hotela i restorana na Jadranu</span>
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <span class="font-display text-xl sm:text-2xl font-bold block text-badge-hospitality-text">10 Godina</span>
+                <span class="text-zinc-400">Garancije na koroziju</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUE BADGES BANNER -->
+      <section class="w-full bg-surface-dark-elevated text-text-on-dark py-6 border-y border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="flex items-center gap-3 p-2">
+              <span class="material-symbols-outlined text-[28px] text-badge-hospitality-text">shield_with_heart</span>
+              <div>
+                <div class="font-bold text-xs sm:text-sm">100% Lijevani aluminij</div>
+                <div class="text-[11px] sm:text-xs text-zinc-400">Ne hrđa u dodiru s morskom solju</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2">
+              <span class="material-symbols-outlined text-[28px] text-badge-hospitality-text">local_shipping</span>
+              <div>
+                <div class="font-bold text-xs sm:text-sm">Isporuka 2-5 radnih dana</div>
+                <div class="text-[11px] sm:text-xs text-zinc-400">Sa skladišta u Velikoj Gorici</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2">
+              <span class="material-symbols-outlined text-[28px] text-badge-hospitality-text">percent</span>
+              <div>
+                <div class="font-bold text-xs sm:text-sm">Količinski popusti</div>
+                <div class="text-[11px] sm:text-xs text-zinc-400">Ušteda do -25% za veće narudžbe</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2">
+              <span class="material-symbols-outlined text-[28px] text-badge-hospitality-text">receipt_long</span>
+              <div>
+                <div class="font-bold text-xs sm:text-sm">R1 račun i odgoda</div>
+                <div class="text-[11px] sm:text-xs text-zinc-400">Povoljnosti za tvrtke i obrte</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATEGORY BENTO -->
+      <section class="w-full py-12 sm:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-secondary block mb-1">Pregled Asortimana</span>
+              <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900">Kategorije Vrhunskog Namještaja</h2>
+            </div>
+            <button class="nav-trigger text-xs uppercase font-bold text-secondary flex items-center gap-1 hover:underline" data-target="stolice">
+              Svi artikli <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Cat 1 (KLIKABILNO -> STOLICE) -->
+            <div class="nav-trigger group cursor-pointer rounded-xl overflow-hidden bg-white border border-slate-200 hover:shadow-lg transition-all" data-target="stolice">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 relative">
+                <img alt="Stolice" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1Vpcu0DtpNPwkZdIWITDBGotOXe56oGbz0dtc1JlhPeTQTncXZjCB8C3G7prI48OMccPYMJoqT8xOaBIcS2dQkJy2njCLYiDWUM0JkDmEbAtv8VaBM_E-aS9wbqRazLKwbh79xSzPGadQDNzR_yiRNYv7GUARinok0YO8UeMvMG0yuBGd7JYPxn-IDcyrszxljbocJyqiHknZQV47pc3VBMu5TJT7wrSYd1nROO8BXT7WPhE0wnJnL2vo0"/>
+                <span class="absolute top-2 left-2 bg-surface-dark/90 text-white text-[10px] px-2 py-0.5 rounded font-bold uppercase">5 modela na stanju</span>
+              </div>
+              <div class="p-4 flex flex-col justify-between">
+                <div>
+                  <span class="text-[11px] uppercase tracking-wider text-secondary font-bold">Lijevani Aluminij</span>
+                  <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-secondary transition-colors">Stolice za terase</h3>
+                  <p class="text-xs text-slate-500 mt-1">Složive, otporne na buru i jednostavne za održavanje.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="font-bold text-slate-900">od 109 € <span class="text-slate-400 font-normal">+ PDV</span></span>
+                  <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cat 2 (KLIKABILNO -> STOLICE) -->
+            <div class="nav-trigger group cursor-pointer rounded-xl overflow-hidden bg-white border border-slate-200 hover:shadow-lg transition-all" data-target="stolice">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 relative">
+                <img alt="Stolovi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp_iHggwqf2xpfaZkl2CHB-ckRTa6u8XA8mTfqxMQU_JuKtJ_JkH1J9bofO8f0lpWZi7rKGHbn-a4AO2n2DJhAW3lfev61nZ_-B-bwKHgZLCTP1t2g-s2gpOTchD6aocKMbHGdZQxXNrmpC3Z8wxw2IF6dCZDuSIscqCwfRxOgZMDK8FxydPW-zzqCDrproFiz4QLqbpCrzVagYB-9f3TsnSiCYK9BOlPkHk4CLWARYggLL38GDJDd"/>
+                <span class="absolute top-2 left-2 bg-secondary text-white text-[10px] px-2 py-0.5 rounded font-bold uppercase">Novo 2025</span>
+              </div>
+              <div class="p-4 flex flex-col justify-between">
+                <div>
+                  <span class="text-[11px] uppercase tracking-wider text-secondary font-bold">Masivna Baza</span>
+                  <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-secondary transition-colors">Stolovi za terase</h3>
+                  <p class="text-xs text-slate-500 mt-1">Stabilne baze protiv prevrtanja pri jakim naletima vjetra.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="font-bold text-slate-900">od 189 € <span class="text-slate-400 font-normal">+ PDV</span></span>
+                  <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cat 3 (KLIKABILNO -> STOLICE) -->
+            <div class="nav-trigger group cursor-pointer rounded-xl overflow-hidden bg-white border border-slate-200 hover:shadow-lg transition-all" data-target="stolice">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 relative">
+                <img alt="Kompleti" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1XMJQK9i3Y3z9vm8WHhbozU_Q622JwmLXbLLNKjI3aa-bDWYqwNyoxZuQk0mATrq7ALRAnXgCUlM2W0DsC95LIrZu31XyDlTz6eoUuZoboeedyZX8OZFy61lFNPTx1SOP59Up7pe3bI1U1Dj3LZ-_OnodzNwSEK5vqFeEqx2ihuZn_IW0MXWU10Dg_LWpUUj5ByFf8c_0J4Bw7-fDgObUBOePsfeAeNfPnWRITmA7gXNazuqOY-89ggKB0"/>
+                <span class="absolute top-2 left-2 bg-badge-hospitality-bg text-badge-hospitality-text text-[10px] px-2 py-0.5 rounded font-bold uppercase">Ušteda do 15%</span>
+              </div>
+              <div class="p-4 flex flex-col justify-between">
+                <div>
+                  <span class="text-[11px] uppercase tracking-wider text-secondary font-bold">Gotove Kompozicije</span>
+                  <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-secondary transition-colors">Kompleti za Terase</h3>
+                  <p class="text-xs text-slate-500 mt-1">Usklađeni setovi sa stolom i 2 ili 4 stolice.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="font-bold text-slate-900">od 389 € <span class="text-slate-400 font-normal">po setu</span></span>
+                  <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cat 4 (KLIKABILNO -> STOLICE) -->
+            <div class="nav-trigger group cursor-pointer rounded-xl overflow-hidden bg-white border border-slate-200 hover:shadow-lg transition-all" data-target="stolice">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-slate-100 relative">
+                <img alt="Bistro Ratan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1VCEUIOWON138cdoFXZ6nj8uHobkiK83M_QVji_TD30_yvFPCs_dRIyTbizGWm3LZ3fY_szehVg6UAQQH3FUTsgwhGnvuTeImafWL1HP_PUh9PToize35Sgw3WLKaSB53WydNAkho7sqGrNv0M8YFf5eHER5vPCG4cBhO4FtvTkQWwIkNxMulTkv0ew5Cm99MdXkCxynliJqJhe-lnZVhK8uHf_1xZbK8Wflt87-iegXKk_plHbXWYi2_4"/>
+                <span class="absolute top-2 left-2 bg-surface-dark/90 text-white text-[10px] px-2 py-0.5 rounded font-bold uppercase">Bistro Classic</span>
+              </div>
+              <div class="p-4 flex flex-col justify-between">
+                <div>
+                  <span class="text-[11px] uppercase tracking-wider text-secondary font-bold">PE Pleteni Ratan</span>
+                  <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-secondary transition-colors">Bistro i Ratan</h3>
+                  <p class="text-xs text-slate-500 mt-1">Pariški šik s laganom aluminijskom konstrukcijom.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span class="font-bold text-slate-900">od 99 € <span class="text-slate-400 font-normal">+ PDV</span></span>
+                  <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW 2: STOLICE (KATALOG) ==================== -->
+    <div id="view-stolice" class="view-section animate-fadeInUp">
+      <!-- SEO & Breadcrumb header -->
+      <section class="w-full bg-white py-6 sm:py-8 px-4 sm:px-6 border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col gap-4">
+          <nav class="flex items-center gap-2 text-xs text-slate-400 uppercase tracking-wider">
+            <a href="#pocetna" class="nav-trigger hover:text-slate-800 transition-colors" data-target="pocetna">Početna</a>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="text-slate-900 font-bold">Stolice za terase</span>
+          </nav>
+
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+            <div>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container rounded text-badge-hospitality-text text-xs uppercase tracking-widest font-bold">
+                <span class="material-symbols-outlined text-[15px]">verified</span> HoReCa Pro Grade
+              </div>
+              <h1 class="font-display text-2xl sm:text-4xl font-bold text-slate-900 mt-2">
+                Profesionalne Stolice za Terase i Ugostiteljstvo
+              </h1>
+              <p class="text-xs sm:text-sm text-slate-500 max-w-2xl mt-1 leading-relaxed">
+                Stolice od lijevanog aluminija i sintetiziranog ratana testirane za visoku frekvenciju gostiju, otporne na posolicu, udare vjetra i UV zračenje.
+              </p>
+            </div>
+            <a class="inline-flex items-center gap-2 px-4 py-2.5 bg-surface-dark text-badge-hospitality-text hover:bg-secondary hover:text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all w-fit" href="#ponuda-rfq">
+              <span class="material-symbols-outlined text-[16px]">request_quote</span> Zatraži ponudu
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sticky Quick Filter Pills -->
+      <section class="sticky top-[56px] sm:top-[72px] lg:top-[128px] z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 px-4 sm:px-6 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0" id="filter-pills">
+            <button class="filter-pill px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-dark text-white shadow-sm shrink-0" data-filter="all">Sve stolice (5)</button>
+            <button class="filter-pill px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-filter="aluminij">Lijevani aluminij</button>
+            <button class="filter-pill px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-filter="ratan">Ratan</button>
+            <button class="filter-pill px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-filter="bronze">Antique Bronze</button>
+            <button class="filter-pill px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-filter="bijela">Bijele</button>
+          </div>
+
+          <div class="flex items-center justify-between w-full sm:w-auto gap-3 text-xs">
+            <label class="flex items-center gap-1.5 cursor-pointer text-slate-700">
+              <input checked class="w-3.5 h-3.5 rounded text-secondary accent-secondary" type="checkbox"/>
+              <span>Na skladištu</span>
+            </label>
+            <span class="text-slate-300">|</span>
+            <span class="text-slate-500 font-semibold" id="catalog-count">5 artikala</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Grid & Sidebar Container -->
+      <section class="w-full px-4 sm:px-6 py-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Filter Sidebar Desktop -->
+          <aside class="hidden lg:block lg:col-span-3">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-5 sticky top-[200px]">
+              <div class="flex items-center justify-between border-b pb-3">
+                <span class="font-bold text-sm text-slate-900 uppercase">Filtri</span>
+                <button class="text-xs text-secondary hover:underline" id="reset-catalog-filters" type="button">Poništi</button>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold uppercase text-slate-400 block mb-2">Materijal</span>
+                <div class="space-y-1.5 text-xs text-slate-700">
+                  <label class="flex items-center justify-between cursor-pointer">
+                    <span class="flex items-center gap-2"><input checked class="rounded accent-secondary" type="checkbox"/> Lijevani aluminij</span>
+                    <span class="text-slate-400 text-[10px]">4</span>
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer">
+                    <span class="flex items-center gap-2"><input checked class="rounded accent-secondary" type="checkbox"/> PE Ratan</span>
+                    <span class="text-slate-400 text-[10px]">1</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold uppercase text-slate-400 block mb-2">Boja</span>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <div class="flex items-center gap-1.5 p-1 rounded bg-slate-50">
+                    <span class="w-3 h-3 rounded-full bg-[#5C4033]"></span>
+                    <span>Bronze</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 p-1 rounded bg-slate-50">
+                    <span class="w-3 h-3 rounded-full bg-white border border-slate-300"></span>
+                    <span>Bijela</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 p-1 rounded bg-slate-50">
+                    <span class="w-3 h-3 rounded-full bg-black"></span>
+                    <span>Crna</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-surface-dark text-white rounded-lg text-xs space-y-2">
+                <div class="flex items-center gap-1 text-badge-hospitality-text font-bold">
+                  <span class="material-symbols-outlined text-[16px]">apartment</span>
+                  Projekt?
+                </div>
+                <p class="text-zinc-300 text-[11px]">Trebate više od 20 stolica? Zatražite individualnu ponudu s do 25% popusta.</p>
+                <a href="#ponuda-rfq" class="text-badge-hospitality-text font-bold underline block">Pošalji upit →</a>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Product Catalog Cards (3 per row desktop) -->
+          <div class="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" id="product-cards-container">
+            
+            <!-- Item 1: Brioni Antique Bronze -->
+            <article class="product-item group bg-white rounded-xl border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden" data-category="aluminij bronze">
+              <div class="relative aspect-square w-full bg-slate-50 p-4 flex items-center justify-center overflow-hidden">
+                <span class="absolute top-3 left-3 bg-surface-dark text-badge-hospitality-text text-[10px] font-bold uppercase px-2 py-0.5 rounded shadow">Bestseller</span>
+                <button class="wishlist-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center text-slate-400 hover:text-red-500 transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </button>
+                <img alt="Stolica Brioni Antique Bronze" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1WfYq80uyw938gcIW1AT8XNyAnITrvZWPnvtj1ZFb7dIC-lKRXEjDu-vM5ul4XGp_GeaKltE84mss0fmB2dYUPGykhmh_VckP24XceoBAbTKhZpM4_8UfHetKSDT1xsTN2KxN1-Vm03MCP0qBVJqJOO67v2KM_aSk27LvUpN3bjByMoaKLqHs6gIU65SfcstZqNI3qOmbVv1NWN6d5L6EHteCdaawAZH44DHTJ02yA7oKjz9uOSgkVbjjY"/>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Lijevani aluminij • Bronze</span>
+                  <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-secondary transition-colors mt-0.5">Stolica Brioni Antique Bronze</h3>
+                  <p class="text-xs text-slate-500 mt-1 line-clamp-2">Otporna na koroziju, vlagu i UV zračenje, stvorena za jadransku posolicu.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                  <div>
+                    <span class="font-display font-bold text-lg text-slate-900">129,00 €</span>
+                    <span class="text-[10px] text-slate-400 block">s PDV-om</span>
+                  </div>
+                  <button class="add-to-cart-trigger px-3 py-2 bg-surface-dark text-white hover:bg-secondary rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 transition-colors" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                    Kupi
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 2: Brioni Bijela -->
+            <article class="product-item group bg-white rounded-xl border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden" data-category="aluminij bijela">
+              <div class="relative aspect-square w-full bg-slate-50 p-4 flex items-center justify-center overflow-hidden">
+                <span class="absolute top-3 left-3 bg-secondary text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded shadow">Elegance</span>
+                <button class="wishlist-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center text-slate-400 hover:text-red-500 transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </button>
+                <img alt="Stolica Brioni Bijela" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1WhBut65R-PqrMc5NlfyItrUXci5l-nWinOlXccdQv54gPGtvceTga-nhpfozIgoP7Aes8SyuiMBTnFcDi3W_Vq2FeNxsbyzBylj6d3_s0saMtf8RORx0e9tvmdT0iiBFLkddCpkQ6yYdFW8-EFfbiaWyDjyDH6r25tplJ3fpGEgAuGCVh7xk8wnF8E1V-nh00YApO4M8StChQsr84Sf_ZYoxqPk89Dnivq4aKkFxox76WhFAgaeX7UiEs"/>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Lijevani aluminij • Mat bijela</span>
+                  <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-secondary transition-colors mt-0.5">Stolica Brioni Bijela</h3>
+                  <p class="text-xs text-slate-500 mt-1 line-clamp-2">Čisti mediteranski sjaj, elektrostatski plastificirana protiv ogrebotina.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                  <div>
+                    <span class="font-display font-bold text-lg text-slate-900">119,00 €</span>
+                    <span class="text-[10px] text-slate-400 block">s PDV-om</span>
+                  </div>
+                  <button class="add-to-cart-trigger px-3 py-2 bg-surface-dark text-white hover:bg-secondary rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 transition-colors" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                    Kupi
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 3: Paris crno-bijela -->
+            <article class="product-item group bg-white rounded-xl border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden" data-category="ratan">
+              <div class="relative aspect-square w-full bg-slate-50 p-4 flex items-center justify-center overflow-hidden">
+                <span class="absolute top-3 left-3 bg-surface-dark text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded shadow">Cafe Classic</span>
+                <button class="wishlist-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center text-slate-400 hover:text-red-500 transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </button>
+                <img alt="Stolica Paris" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1V3T1rj3aY8BTBC9HprcspMIutBd2klQIqEjtnoHVggb8sUIKxFbaeekNZl3s2hounD6HRBVw0j7neZ1qT6dz0arhyph-Onubkq0sxzmrKy3yv91kNQSfFxIPVsjJB2v4vY9LXNSc_TxrhM3vckTpwW1ISInEWy3bS4sRqd47Fb0noBxwAox4z0SFf4OzQEsoddaPZiC0yNmbPH5CoUozCoXFTgACmyDrCIXF8lM2jrcggrfLzOQsygVIk"/>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Sintetizirani Ratan • Složiva</span>
+                  <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-secondary transition-colors mt-0.5">Stolica Paris Crno-Bijela</h3>
+                  <p class="text-xs text-slate-500 mt-1 line-clamp-2">Pariški bistro stil s ojačanom aluminijskom bazom u teksturi bambusa.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                  <div>
+                    <span class="font-display font-bold text-lg text-slate-900">109,00 €</span>
+                    <span class="text-[10px] text-slate-400 block">s PDV-om</span>
+                  </div>
+                  <button class="add-to-cart-trigger px-3 py-2 bg-surface-dark text-white hover:bg-secondary rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 transition-colors" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                    Kupi
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 4: Spalato Antique Crna -->
+            <article class="product-item group bg-white rounded-xl border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden" data-category="aluminij">
+              <div class="relative aspect-square w-full bg-slate-50 p-4 flex items-center justify-center overflow-hidden">
+                <span class="absolute top-3 left-3 bg-surface-dark text-badge-hospitality-text text-[10px] font-bold uppercase px-2 py-0.5 rounded shadow">Wind Proof</span>
+                <button class="wishlist-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center text-slate-400 hover:text-red-500 transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </button>
+                <img alt="Stolica Spalato" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1X4z6YGPZxcxpercC0eLjNG3vMXZhU4fMpNUS3qnbPQDlLTSDsFnZyorOulR9ZTxTIoLEVIG0elIa6G-4Vs2NUBag9Z4RffkNE6Wh0E4Mgci02__9wYFadFevk_35JE-fCuvZUkAeIOfa9JFu5C28neiV_Vl6TePgjGwtpQOR1F-y2RItof1AhFMraLQeVNtZS1SYswDUkB4IYjukhsfAp1VOYbxW5rXCAdMzctxP83Zkjz_ZsiLtU99IU"/>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Lijevani aluminij • Crna</span>
+                  <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-secondary transition-colors mt-0.5">Stolica Spalato Antique Crna</h3>
+                  <p class="text-xs text-slate-500 mt-1 line-clamp-2">Masivnija konstrukcija s mrežastim uzorkom, otporna na udare bure.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                  <div>
+                    <span class="font-display font-bold text-lg text-slate-900">139,00 €</span>
+                    <span class="text-[10px] text-slate-400 block">s PDV-om</span>
+                  </div>
+                  <button class="add-to-cart-trigger px-3 py-2 bg-surface-dark text-white hover:bg-secondary rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 transition-colors" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                    Kupi
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 5: Zara -->
+            <article class="product-item group bg-white rounded-xl border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden" data-category="aluminij bronze">
+              <div class="relative aspect-square w-full bg-slate-50 p-4 flex items-center justify-center overflow-hidden">
+                <span class="absolute top-3 left-3 bg-surface-container text-slate-800 text-[10px] font-bold uppercase px-2 py-0.5 rounded shadow">Best Buy</span>
+                <button class="wishlist-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center text-slate-400 hover:text-red-500 transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px]">favorite</span>
+                </button>
+                <img alt="Stolica Zara" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1VyUEA2mzXGabEVUqISkg6WtAwZCSjOn8KiYNvjauOLcO9rMWJcrp7hbi_d4VK0fIuj1NCvrgViKY30-HbPn9lDAuqKYoALRpx4fQnVbdy0YiuMyhNKaRcrc_Q78IRad_kDC7NGlA9MjkRMTubK5I6h-Y6kYpMZghU0POERzuAoT6ArowIaPpAWDedt5oXYhnTe6xUVbTpmZkUjTP0D31ictdmjmm4ILqyEOC16DOKRQiQ-W7zFFjvleQ"/>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Lijevani aluminij • Geometrija</span>
+                  <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-secondary transition-colors mt-0.5">Stolica Zara za Terase</h3>
+                  <p class="text-xs text-slate-500 mt-1 line-clamp-2">Laganija konstrukcija s ornamentikom, vrlo laka za svakodnevno rukovanje.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                  <div>
+                    <span class="font-display font-bold text-lg text-slate-900">119,00 €</span>
+                    <span class="text-[10px] text-slate-400 block">s PDV-om</span>
+                  </div>
+                  <button class="add-to-cart-trigger px-3 py-2 bg-surface-dark text-white hover:bg-secondary rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 transition-colors" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                    Kupi
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW 3: KOŠARICA ==================== -->
+    <div id="view-kosarica" class="view-section animate-fadeInUp bg-white min-h-[70vh]">
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+        <h1 class="font-display text-3xl font-bold text-slate-900 mb-8 border-b pb-4">Vaša Košarica</h1>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <!-- Popis artikala -->
+          <div class="lg:col-span-8 space-y-6">
+            
+            <!-- Artikl 1 -->
+            <div class="flex flex-col sm:flex-row gap-4 p-4 border border-slate-200 rounded-xl hover:shadow-md transition-shadow bg-slate-50">
+              <div class="w-full sm:w-32 h-32 bg-white rounded-lg p-2 flex shrink-0 justify-center">
+                 <img src="https://lh3.googleusercontent.com/aida/AEtjO1WfYq80uyw938gcIW1AT8XNyAnITrvZWPnvtj1ZFb7dIC-lKRXEjDu-vM5ul4XGp_GeaKltE84mss0fmB2dYUPGykhmh_VckP24XceoBAbTKhZpM4_8UfHetKSDT1xsTN2KxN1-Vm03MCP0qBVJqJOO67v2KM_aSk27LvUpN3bjByMoaKLqHs6gIU65SfcstZqNI3qOmbVv1NWN6d5L6EHteCdaawAZH44DHTJ02yA7oKjz9uOSgkVbjjY" class="h-full object-contain" alt="Stolica Brioni">
+              </div>
+              <div class="flex flex-col justify-between flex-1 gap-4">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="font-bold text-lg text-slate-900">Stolica Brioni Antique Bronze</h3>
+                    <p class="text-xs text-slate-500 mt-1">Lijevani aluminij, otporno na vjetar</p>
+                  </div>
+                  <button class="text-slate-400 hover:text-red-500 transition-colors" title="Ukloni artikl">
+                    <span class="material-symbols-outlined">delete</span>
+                  </button>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3 bg-white border border-slate-200 rounded-lg p-1">
+                    <button class="w-8 h-8 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded">-</button>
+                    <span class="font-bold text-sm">2</span>
+                    <button class="w-8 h-8 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded">+</button>
+                  </div>
+                  <div class="font-display text-xl font-bold text-slate-900">258,00 €</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Artikl 2 -->
+            <div class="flex flex-col sm:flex-row gap-4 p-4 border border-slate-200 rounded-xl hover:shadow-md transition-shadow bg-slate-50">
+              <div class="w-full sm:w-32 h-32 bg-white rounded-lg p-2 flex shrink-0 justify-center">
+                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp_iHggwqf2xpfaZkl2CHB-ckRTa6u8XA8mTfqxMQU_JuKtJ_JkH1J9bofO8f0lpWZi7rKGHbn-a4AO2n2DJhAW3lfev61nZ_-B-bwKHgZLCTP1t2g-s2gpOTchD6aocKMbHGdZQxXNrmpC3Z8wxw2IF6dCZDuSIscqCwfRxOgZMDK8FxydPW-zzqCDrproFiz4QLqbpCrzVagYB-9f3TsnSiCYK9BOlPkHk4CLWARYggLL38GDJDd" class="h-full object-contain" alt="Stol Roma">
+              </div>
+              <div class="flex flex-col justify-between flex-1 gap-4">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="font-bold text-lg text-slate-900">Stol Roma Fi 90cm</h3>
+                    <p class="text-xs text-slate-500 mt-1">Lijevani aluminij, okrugli</p>
+                  </div>
+                  <button class="text-slate-400 hover:text-red-500 transition-colors" title="Ukloni artikl">
+                    <span class="material-symbols-outlined">delete</span>
+                  </button>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3 bg-white border border-slate-200 rounded-lg p-1">
+                    <button class="w-8 h-8 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded">-</button>
+                    <span class="font-bold text-sm">1</span>
+                    <button class="w-8 h-8 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded">+</button>
+                  </div>
+                  <div class="font-display text-xl font-bold text-slate-900">219,00 €</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sažetak košarice -->
+          <div class="lg:col-span-4">
+            <div class="bg-surface-dark text-white rounded-xl p-6 shadow-xl sticky top-[130px]">
+              <h3 class="font-bold text-lg mb-6 border-b border-zinc-700 pb-2">Sažetak narudžbe</h3>
+              <div class="space-y-4 text-sm text-zinc-300">
+                <div class="flex justify-between">
+                  <span>Ukupno artikala (3)</span>
+                  <span>381,60 €</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Dostava</span>
+                  <span class="text-green-400 font-bold">Besplatna</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>PDV (25%)</span>
+                  <span>95,40 €</span>
+                </div>
+                <div class="border-t border-zinc-700 pt-4 mt-4 flex justify-between items-end">
+                  <span class="font-bold">Sveukupno za platiti</span>
+                  <span class="font-display text-2xl font-bold text-badge-hospitality-text">477,00 €</span>
+                </div>
+              </div>
+              <button class="w-full mt-8 py-3.5 bg-badge-hospitality-text hover:bg-secondary text-surface-dark font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-[20px]">credit_card</span>
+                Nastavi na naplatu
+              </button>
+              <p class="text-center text-[10px] text-zinc-500 mt-4 flex justify-center items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">lock</span> Sigurna 256-bit enkripcija
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW 4: CMS / ADMIN (ČISTO, SIGURNO, JEDNOSTAVNO) ==================== -->
+    <!-- Maknut je padding kako bi CMS potpuno pokrio ekran -->
+    <div id="view-cms" class="view-section animate-fadeInUp min-h-screen text-white pb-20">
+      
+      <!-- CMS LOGIN SCREEN -->
+      <div id="cms-login" class="flex flex-col items-center justify-center min-h-[90vh] px-4">
+        <div class="bg-[#111318] p-8 sm:p-12 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-zinc-800 w-full max-w-md flex flex-col items-center text-center relative overflow-hidden">
+          <!-- Dekorativni sjaj -->
+          <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-badge-hospitality-text to-transparent opacity-50"></div>
+          
+          <div class="w-20 h-20 rounded-full bg-[#0a0c10] flex items-center justify-center border border-zinc-700 mb-6 shadow-inner relative group">
+            <span class="material-symbols-outlined text-badge-hospitality-text text-[36px] group-hover:scale-110 transition-transform">fingerprint</span>
+          </div>
+          <h2 class="font-display text-3xl font-bold mb-2 tracking-wide">Abduco OS</h2>
+          <p class="text-xs text-zinc-500 mb-8 uppercase tracking-[0.2em] font-mono">Zaštićeni pristup</p>
+          
+          <div class="w-full space-y-5">
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-4 top-3.5 text-zinc-600 text-[20px]">lock</span>
+              <input type="password" placeholder="Unesite pristupnu šifru" class="w-full bg-[#0a0c10] border border-zinc-800 rounded-xl py-4 pl-12 pr-4 text-sm text-white focus:outline-none focus:border-badge-hospitality-text text-center tracking-[0.3em] font-mono shadow-inner transition-colors" />
+            </div>
+            <button id="cms-login-btn" class="w-full py-4 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest text-sm rounded-xl transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] flex justify-center items-center gap-2">
+              Autentifikacija <span class="material-symbols-outlined text-[18px]">login</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CMS DASHBOARD (Sakriveno dok se ne ulogira) -->
+      <div id="cms-dashboard" class="hidden max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 sm:mb-12 border-b border-zinc-800 pb-6">
+          <div>
+            <h1 class="font-display text-2xl sm:text-4xl font-bold text-white flex items-center gap-3">
+              Nadzorna Ploča <span class="material-symbols-outlined text-badge-hospitality-text text-[28px] sm:text-[36px]">verified_user</span>
+            </h1>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">Jednostavan pregled upita i artikala webshopa.</p>
+          </div>
+          <div class="flex gap-3 w-full sm:w-auto">
+             <button class="nav-trigger flex-1 sm:flex-none px-4 py-3 bg-[#111318] border border-zinc-700 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase hover:bg-zinc-800 transition text-zinc-300" data-target="pocetna">
+               Zatvori
+             </button>
+             <button class="flex-1 sm:flex-none px-5 py-3 bg-badge-hospitality-text text-black font-bold uppercase tracking-wider rounded-xl text-xs sm:text-sm hover:bg-secondary flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all">
+               <span class="material-symbols-outlined text-[18px]">add_circle</span> Novi artikl
+             </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+          
+          <!-- Brzi Upiti za Ponude (Povezano s kalkulatorom) -->
+          <div class="bg-[#111318] rounded-2xl border border-zinc-800 overflow-hidden flex flex-col shadow-2xl">
+            <div class="p-5 sm:p-6 border-b border-zinc-800 flex justify-between items-center bg-[#15171c]">
+              <h3 class="font-bold text-base sm:text-lg text-white flex items-center gap-2">
+                <span class="material-symbols-outlined text-badge-hospitality-text">mail</span>
+                Pristigli Upiti za Ponude
+              </h3>
+            </div>
+            <div class="p-4 sm:p-6 flex-1 bg-[#0a0c10]">
+              <div class="space-y-4">
+                <!-- Upit 1 -->
+                <div class="p-4 sm:p-5 bg-[#111318] rounded-xl border border-zinc-800 hover:border-zinc-700 transition-colors">
+                  <div class="flex justify-between items-start mb-4">
+                    <div>
+                      <span class="font-bold text-white text-sm sm:text-base block mb-0.5">Hotel Adria d.o.o.</span>
+                      <span class="text-[10px] text-zinc-500 uppercase tracking-wider font-mono">OIB: 49201948201</span>
+                    </div>
+                    <span class="text-[10px] sm:text-xs text-badge-hospitality-text bg-badge-hospitality-text/10 border border-badge-hospitality-text/20 px-2 sm:px-3 py-1 rounded-full font-bold">NOVO (prije 1h)</span>
+                  </div>
+                  <div class="text-sm text-zinc-300 bg-[#0a0c10] border border-zinc-800/50 p-3 sm:p-4 rounded-lg mb-4">
+                    <p class="font-bold mb-2 text-xs uppercase tracking-wider text-zinc-500">Detalji iz kalkulatora:</p>
+                    <ul class="text-xs sm:text-sm space-y-1.5 text-zinc-400">
+                      <li class="flex justify-between border-b border-zinc-800 pb-1">Količina: <span class="text-white font-bold">120 kom (Očekuje 25% popust)</span></li>
+                      <li class="flex justify-between pt-1">Materijal: <span class="text-white font-bold">Aluminij i Ratan</span></li>
+                    </ul>
+                    <p class="mt-3 text-xs italic text-zinc-400 border-l-2 border-zinc-700 pl-3">"Trebamo opremiti terasu do idućeg mjeseca. Molim ponudu s R1."</p>
+                  </div>
+                  <div class="flex gap-2">
+                    <button class="flex-1 sm:flex-none px-4 py-2.5 bg-white text-black text-xs uppercase font-bold rounded-lg hover:bg-zinc-200 transition">Odgovori (Mail)</button>
+                    <button class="flex-1 sm:flex-none px-4 py-2.5 bg-[#0a0c10] border border-zinc-700 text-zinc-400 text-xs uppercase font-bold rounded-lg hover:text-white transition">Riješeno</button>
+                  </div>
+                </div>
+                
+                <!-- Upit 2 -->
+                <div class="p-4 sm:p-5 bg-[#111318] rounded-xl border border-zinc-800 opacity-70">
+                  <div class="flex justify-between items-start mb-4">
+                    <div>
+                      <span class="font-bold text-white text-sm sm:text-base block mb-0.5">Bistro Riva</span>
+                    </div>
+                    <span class="text-[10px] sm:text-xs text-zinc-500 bg-zinc-800/50 px-2 sm:px-3 py-1 rounded-full">Jučer</span>
+                  </div>
+                  <div class="text-sm text-zinc-300 bg-[#0a0c10] border border-zinc-800/50 p-3 sm:p-4 rounded-lg mb-4">
+                    <p class="font-bold mb-2 text-xs uppercase tracking-wider text-zinc-500">Detalji iz kalkulatora:</p>
+                    <ul class="text-xs sm:text-sm space-y-1.5 text-zinc-400">
+                      <li class="flex justify-between border-b border-zinc-800 pb-1">Količina: <span class="text-white">45 kom (Očekuje 12% popust)</span></li>
+                      <li class="flex justify-between pt-1">Materijal: <span class="text-white">Ratan pletivo</span></li>
+                    </ul>
+                  </div>
+                  <div class="flex gap-2">
+                    <button class="flex-1 sm:flex-none px-4 py-2.5 bg-[#0a0c10] border border-zinc-800 text-zinc-600 text-xs uppercase font-bold rounded-lg cursor-not-allowed">Obrađeno</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jednostavan pregled i dodavanje artikala -->
+          <div class="bg-[#111318] rounded-2xl border border-zinc-800 overflow-hidden flex flex-col shadow-2xl">
+            <div class="p-5 sm:p-6 border-b border-zinc-800 flex justify-between items-center bg-[#15171c]">
+              <h3 class="font-bold text-base sm:text-lg text-white flex items-center gap-2">
+                <span class="material-symbols-outlined text-badge-hospitality-text">inventory_2</span>
+                Upravljanje Artiklima
+              </h3>
+            </div>
+            <div class="p-0 flex-1 overflow-x-auto bg-[#0a0c10]">
+              <table class="w-full text-left text-sm min-w-[500px]">
+                <thead class="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-widest bg-[#111318]">
+                  <tr>
+                    <th class="px-4 sm:px-6 py-4 font-bold">Artikl</th>
+                    <th class="px-4 sm:px-6 py-4 font-bold">Cijena</th>
+                    <th class="px-4 sm:px-6 py-4 font-bold text-right">Akcija</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-800/50">
+                  <tr class="hover:bg-[#111318] transition-colors">
+                    <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
+                      <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1 shrink-0"><img src="https://lh3.googleusercontent.com/aida/AEtjO1WfYq80uyw938gcIW1AT8XNyAnITrvZWPnvtj1ZFb7dIC-lKRXEjDu-vM5ul4XGp_GeaKltE84mss0fmB2dYUPGykhmh_VckP24XceoBAbTKhZpM4_8UfHetKSDT1xsTN2KxN1-Vm03MCP0qBVJqJOO67v2KM_aSk27LvUpN3bjByMoaKLqHs6gIU65SfcstZqNI3qOmbVv1NWN6d5L6EHteCdaawAZH44DHTJ02yA7oKjz9uOSgkVbjjY" class="h-full object-contain"></div>
+                      <span class="font-bold text-zinc-200 text-xs sm:text-sm">Brioni Bronze</span>
+                    </td>
+                    <td class="px-4 sm:px-6 py-4 text-zinc-300 font-mono text-xs sm:text-sm">129 €</td>
+                    <td class="px-4 sm:px-6 py-4 text-right">
+                      <button class="text-zinc-400 border border-zinc-700 hover:text-white hover:border-zinc-500 bg-[#0a0c10] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs uppercase font-bold tracking-wider transition">Uredi</button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-[#111318] transition-colors">
+                    <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
+                      <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1 shrink-0"><img src="https://lh3.googleusercontent.com/aida/AEtjO1WhBut65R-PqrMc5NlfyItrUXci5l-nWinOlXccdQv54gPGtvceTga-nhpfozIgoP7Aes8SyuiMBTnFcDi3W_Vq2FeNxsbyzBylj6d3_s0saMtf8RORx0e9tvmdT0iiBFLkddCpkQ6yYdFW8-EFfbiaWyDjyDH6r25tplJ3fpGEgAuGCVh7xk8wnF8E1V-nh00YApO4M8StChQsr84Sf_ZYoxqPk89Dnivq4aKkFxox76WhFAgaeX7UiEs" class="h-full object-contain"></div>
+                      <span class="font-bold text-zinc-200 text-xs sm:text-sm">Brioni Bijela</span>
+                    </td>
+                    <td class="px-4 sm:px-6 py-4 text-zinc-300 font-mono text-xs sm:text-sm">119 €</td>
+                    <td class="px-4 sm:px-6 py-4 text-right">
+                      <button class="text-zinc-400 border border-zinc-700 hover:text-white hover:border-zinc-500 bg-[#0a0c10] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs uppercase font-bold tracking-wider transition">Uredi</button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-[#111318] transition-colors">
+                    <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
+                      <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1 shrink-0"><img src="https://lh3.googleusercontent.com/aida/AEtjO1V3T1rj3aY8BTBC9HprcspMIutBd2klQIqEjtnoHVggb8sUIKxFbaeekNZl3s2hounD6HRBVw0j7neZ1qT6dz0arhyph-Onubkq0sxzmrKy3yv91kNQSfFxIPVsjJB2v4vY9LXNSc_TxrhM3vckTpwW1ISInEWy3bS4sRqd47Fb0noBxwAox4z0SFf4OzQEsoddaPZiC0yNmbPH5CoUozCoXFTgACmyDrCIXF8lM2jrcggrfLzOQsygVIk" class="h-full object-contain"></div>
+                      <span class="font-bold text-zinc-200 text-xs sm:text-sm">Paris Crno-Bijela</span>
+                    </td>
+                    <td class="px-4 sm:px-6 py-4 text-zinc-300 font-mono text-xs sm:text-sm">109 €</td>
+                    <td class="px-4 sm:px-6 py-4 text-right">
+                      <button class="text-zinc-400 border border-zinc-700 hover:text-white hover:border-zinc-500 bg-[#0a0c10] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs uppercase font-bold tracking-wider transition">Uredi</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- GLOBALNI SHARED BOTTOM ELEMENTI (Izolirano od CMS-a i Košarice pomoću JS-a) -->
+    <div id="global-bottom-sections">
+      
+      <!-- ==================== SHARED PONUDA S INTERAKTIVNIM KALKULATOROM ==================== -->
+      <section class="w-full bg-surface-dark text-text-on-dark py-12 sm:py-20 px-4 sm:px-6 mt-8 border-y border-zinc-800" id="ponuda-rfq">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-dark-elevated rounded-full border border-zinc-700 text-badge-hospitality-text text-[10px] sm:text-xs font-bold uppercase tracking-widest">
+                <span class="material-symbols-outlined text-[16px]">corporate_fare</span> Projektna Opremanja
+              </div>
+              <h2 class="font-display text-3xl sm:text-5xl text-white font-bold leading-tight">
+                Opremate terasu restorana, hotela ili bara?
+              </h2>
+              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                Zatražite besplatan uzorak na testiranje i profesionalni 3D raspored sjedenja. Poigrajte se kalkulatorom s desne strane i odmah provjerite potencijalne <strong>količinske popuste</strong> koji se generiraju za Vaš volumen.
+              </p>
+              
+              <div class="bg-badge-hospitality-bg border border-badge-hospitality-text/30 p-5 rounded-xl shadow-[0_0_30px_rgba(212,175,55,0.1)] mt-6 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-badge-hospitality-text/10 rounded-full blur-3xl"></div>
+                <h4 class="text-[10px] sm:text-xs uppercase text-zinc-400 font-bold tracking-widest mb-4">Vaša procijenjena ušteda</h4>
+                <div class="flex items-end gap-4 mb-2">
+                  <!-- Brojka koja se animira -->
+                  <span class="font-display text-5xl sm:text-7xl font-bold text-badge-hospitality-text leading-none transition-all duration-300 inline-block" id="calc-discount">12%</span>
+                  <span class="text-xs sm:text-sm text-zinc-300 font-bold pb-2">Količinski popust</span>
+                </div>
+                <p class="text-[10px] sm:text-xs text-zinc-500" id="calc-msg">Za narudžbu od 25-49 komada automatski ostvarujete odličan popust. Unesite točne podatke za formiranje službene ponude.</p>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-surface-dark-elevated p-5 sm:p-8 rounded-2xl border border-zinc-800 shadow-2xl relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+              
+              <h3 class="font-display text-xl sm:text-2xl font-bold text-white mb-2 relative z-10">Zatražite individualnu ponudu</h3>
+              <p class="text-[10px] sm:text-xs text-zinc-400 mb-6 relative z-10">Odgovor unutar 2-4 radna sata sa skladišta u Velikoj Gorici. R1 račun uključen.</p>
+              
+              <form id="shared-rfq-form" class="space-y-5 relative z-10">
+                <div class="bg-[#111318] p-5 sm:p-6 rounded-xl border border-zinc-700/50 shadow-inner">
+                  <div class="flex justify-between items-center mb-5">
+                    <label class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white">Koliko stolica trebate?</label>
+                    <span class="font-display text-xl sm:text-2xl font-bold text-badge-hospitality-text bg-[#0a0c10] px-3 py-1 rounded shadow-sm border border-zinc-800" id="slider-val">30 kom</span>
+                  </div>
+                  <input type="range" id="chair-slider" min="10" max="250" value="30" step="1">
+                  <div class="flex justify-between text-[9px] sm:text-[10px] text-zinc-500 mt-3 font-bold uppercase tracking-wider">
+                    <span>10 (Min)</span>
+                    <span>100+ (Maks popust)</span>
+                  </div>
+                </div>
+
+                <!-- Multiple Checkbox odabir umjesto radija -->
+                <div>
+                  <label class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-zinc-400 block mb-3">Preferirani materijali (Možete odabrati više)</label>
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-xs">
+                    
+                    <label class="mat-checkbox-label flex flex-col items-center justify-center p-3 rounded-xl border border-badge-hospitality-text bg-badge-hospitality-bg cursor-pointer transition-all shadow-md">
+                      <input type="checkbox" class="hidden mat-checkbox" value="aluminij" checked>
+                      <span class="material-symbols-outlined text-[24px] mb-1 text-badge-hospitality-text icon transition-colors">chair_alt</span>
+                      <span class="font-bold text-white text transition-colors text-[10px] sm:text-xs">Aluminij</span>
+                    </label>
+                    
+                    <label class="mat-checkbox-label flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-700 bg-surface-dark cursor-pointer transition-all hover:border-zinc-500">
+                      <input type="checkbox" class="hidden mat-checkbox" value="ratan">
+                      <span class="material-symbols-outlined text-[24px] mb-1 text-zinc-400 icon transition-colors">deck</span>
+                      <span class="font-bold text-zinc-400 text transition-colors text-[10px] sm:text-xs">Ratan pletivo</span>
+                    </label>
+                    
+                    <label class="mat-checkbox-label flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-700 bg-surface-dark cursor-pointer transition-all hover:border-zinc-500">
+                      <input type="checkbox" class="hidden mat-checkbox" value="stolovi">
+                      <span class="material-symbols-outlined text-[24px] mb-1 text-zinc-400 icon transition-colors">table_bar</span>
+                      <span class="font-bold text-zinc-400 text transition-colors text-[10px] sm:text-xs">I Stolovi</span>
+                    </label>
+                    
+                    <label class="mat-checkbox-label flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-700 bg-surface-dark cursor-pointer transition-all hover:border-zinc-500">
+                      <input type="checkbox" class="hidden mat-checkbox" value="savjet">
+                      <span class="material-symbols-outlined text-[24px] mb-1 text-zinc-400 icon transition-colors">question_mark</span>
+                      <span class="font-bold text-zinc-400 text transition-colors text-[10px] sm:text-xs">Savjet</span>
+                    </label>
+
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <input class="w-full bg-surface-dark border border-zinc-700 text-white text-[11px] sm:text-xs px-4 py-3.5 rounded-xl focus:outline-none focus:border-badge-hospitality-text transition-colors" placeholder="Naziv Tvrtke / Objekta *" required type="text"/>
+                  <input class="w-full bg-surface-dark border border-zinc-700 text-white text-[11px] sm:text-xs px-4 py-3.5 rounded-xl focus:outline-none focus:border-badge-hospitality-text transition-colors" placeholder="Poslovni E-mail *" required type="email"/>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <input class="w-full bg-surface-dark border border-zinc-700 text-white text-[11px] sm:text-xs px-4 py-3.5 rounded-xl focus:outline-none focus:border-badge-hospitality-text transition-colors" placeholder="Kontakt telefon *" required type="tel"/>
+                  <input class="w-full bg-surface-dark border border-zinc-700 text-white text-[11px] sm:text-xs px-4 py-3.5 rounded-xl focus:outline-none focus:border-badge-hospitality-text transition-colors" placeholder="OIB poduzeća (za R1)" type="text"/>
+                </div>
+                
+                <textarea class="w-full bg-surface-dark border border-zinc-700 text-white text-[11px] sm:text-xs p-4 rounded-xl focus:outline-none focus:border-badge-hospitality-text transition-colors" placeholder="Vaša poruka (npr. 'Uz stolice trebam i 8 kvadratnih stolova')..." rows="2"></textarea>
+                
+                <button class="w-full py-4 sm:py-5 bg-white hover:bg-zinc-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]" type="submit">
+                  Zatražite besplatnu izradu ponude <span class="material-symbols-outlined text-[18px]">send</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SHARED FAQ ACCORDION ==================== -->
+      <section class="w-full py-12 sm:py-16 px-4 sm:px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+          <div class="text-center">
+            <span class="text-[10px] sm:text-xs uppercase font-bold text-secondary tracking-widest">Pitanja i Odgovori</span>
+            <h2 class="font-display text-2xl sm:text-4xl font-bold text-slate-900 mt-2">Često postavljana pitanja</h2>
+          </div>
+          <div class="space-y-3 sm:space-y-4">
+            <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <button class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left font-bold text-sm sm:text-base text-slate-900 focus:outline-none" type="button">
+                <span class="pr-4">Zašto je lijevani aluminij najbolji odabir za morske terase?</span>
+                <span class="material-symbols-outlined text-secondary transition-transform text-[24px]">expand_more</span>
+              </button>
+              <div class="faq-content hidden px-4 sm:px-5 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-2">
+                Lijevani aluminij stvara prirodni zaštitni oksidni sloj koji sprečava koroziju u dodiru sa slanim morskim zrakom i vlagom. Za razliku od kovanog željeza koje hrđa ili plastike koja puca na suncu, lijevani aluminij traje desetljećima uz minimalno održavanje (ispiranje slatkom vodom).
+              </div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <button class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left font-bold text-sm sm:text-base text-slate-900 focus:outline-none" type="button">
+                <span class="pr-4">Koliki su rokovi isporuke i gdje se nalazi salon?</span>
+                <span class="material-symbols-outlined text-secondary transition-transform text-[24px]">expand_more</span>
+              </button>
+              <div class="faq-content hidden px-4 sm:px-5 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-2">
+                Svi artikli s oznakom "Na skladištu" pohranjeni su u centralnom skladištu u Velikoj Gorici (Zagrebačka 61). Isporuka za Zagreb i okolicu je unutar 24-48h, dok je za Jadran i otoke 2 do 5 radnih dana. Salon je otvoren pon-pet 08:00 - 17:00h.
+              </div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <button class="faq-toggle w-full p-4 sm:p-5 flex items-center justify-between text-left font-bold text-sm sm:text-base text-slate-900 focus:outline-none" type="button">
+                <span class="pr-4">Može li se dobiti R1 račun i odgođeno plaćanje?</span>
+                <span class="material-symbols-outlined text-secondary transition-transform text-[24px]">expand_more</span>
+              </button>
+              <div class="faq-content hidden px-4 sm:px-5 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-2">
+                Da, za sva poduzeća i obrte izdajemo R1 račun s iskazanim PDV-om od 25%. Za veće HoReCa narudžbe i stalne partnere nudimo mogućnost ugovaranja odgode plaćanja ili leasing modela.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="main-footer" class="w-full bg-surface-dark text-text-on-dark pt-12 sm:pt-16 pb-8 border-t border-zinc-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 sm:pb-12 border-b border-zinc-800 text-xs">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold text-xl uppercase text-white">ABDUCO CENTAR</span>
+          </div>
+          <p class="text-zinc-400 leading-relaxed">Specijalizirani uvoznik i distributer robusnog namještaja za ugostiteljstvo i terase u Hrvatskoj.</p>
+          <div class="text-zinc-400 space-y-2">
+            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-badge-hospitality-text">location_on</span> Zagrebačka 61, 10410 Velika Gorica</p>
+            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-badge-hospitality-text">mail</span> <a href="mailto:info@stolice-stolovi.com" class="text-white hover:underline">info@stolice-stolovi.com</a></p>
+            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-badge-hospitality-text">call</span> <a href="tel:+38516222222" class="text-white hover:underline">+385 1 622 2222</a></p>
+          </div>
+        </div>
+
+        <div>
+          <span class="font-bold uppercase tracking-wider text-badge-hospitality-text block mb-4">Kategorije</span>
+          <ul class="space-y-3 text-zinc-400">
+            <li><a href="#stolice" class="nav-trigger hover:text-white transition-colors" data-target="stolice">Stolice za terase</a></li>
+            <li><a href="#stolovi" class="hover:text-white transition-colors">Stolovi i baze</a></li>
+            <li><a href="#kompleti" class="hover:text-white transition-colors">Garniture</a></li>
+            <li><a href="#jastuci" class="hover:text-white transition-colors">Outdoor jastuci</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="font-bold uppercase tracking-wider text-badge-hospitality-text block mb-4">Informacije</span>
+          <ul class="space-y-3 text-zinc-400">
+            <li><a href="#" class="hover:text-white transition-colors">Dostava i povrati</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Uvjeti poslovanja</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Zaštita privatnosti</a></li>
+            <li><a href="#ponuda-rfq" class="hover:text-white transition-colors">Upiti za ponude</a></li>
+            <!-- Skriveni link za Admin CMS za vlasnika -->
+            <li><button class="nav-trigger hover:text-white transition-colors flex items-center gap-1 mt-2 text-zinc-600" data-target="cms"><span class="material-symbols-outlined text-[14px]">lock</span> Prijava za osoblje</button></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <span class="font-bold uppercase tracking-wider text-badge-hospitality-text block">Ekskluzivne novosti</span>
+          <p class="text-zinc-400">Prijavite se za sezonski cjenik i 5% popusta na prvu narudžbu.</p>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input class="w-full bg-surface-dark-elevated border border-zinc-700 text-white px-3 py-3 rounded-lg text-xs focus:outline-none focus:border-badge-hospitality-text transition-colors" placeholder="Poslovni email..." type="email"/>
+            <button class="px-4 py-3 bg-white text-black font-bold text-xs uppercase rounded-lg hover:bg-zinc-200 transition-colors whitespace-nowrap" type="button">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div>© 2026 Abduco centar d.o.o. Sva prava pridržana.</div>
+        <div class="flex items-center gap-3 flex-wrap justify-center">
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-badge-hospitality-text">security</span> SSL Zaštita</span>
+          <span class="hidden sm:inline">•</span>
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-badge-hospitality-text">receipt_long</span> R1 Račun</span>
+          <span class="hidden sm:inline">•</span>
+          <span>stolice-stolovi.com</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART TOAST -->
+  <div id="cart-toast" class="fixed bottom-5 right-5 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-4 bg-surface-dark text-white px-5 py-4 rounded-xl shadow-2xl border border-zinc-700">
+    <span class="material-symbols-outlined text-badge-hospitality-text text-[28px]">check_circle</span>
+    <div class="flex flex-col text-sm">
+      <span class="font-bold text-white">Proizvod dodan u košaricu</span>
+      <span class="text-zinc-400 text-[10px] sm:text-xs mt-0.5">Košarica je uspješno ažurirana.</span>
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIKA -->
+  <script>
+    (function() {
+      // 1. SPA Router s CMS pozadinskom kontrolom
+      const navTriggers = document.querySelectorAll('.nav-trigger');
+      const viewSections = document.querySelectorAll('.view-section');
+      const desktopNavLinks = document.querySelectorAll('.nav-link');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const menuIcon = document.getElementById('menu-icon');
+      
+      const mainContainer = document.getElementById('main-container');
+      const mainHeader = document.getElementById('main-header');
+      const mainFooter = document.getElementById('main-footer');
+      const globalBottomSections = document.getElementById('global-bottom-sections');
+
+      function switchView(targetId) {
+        viewSections.forEach(view => {
+          view.classList.remove('active');
+        });
+        const targetView = document.getElementById(`view-${targetId}`);
+        if (targetView) {
+          targetView.classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        desktopNavLinks.forEach(link => {
+          if (link.getAttribute('data-target') === targetId) {
+            link.classList.add('active-nav');
+          } else {
+            link.classList.remove('active-nav');
+          }
+        });
+
+        // KONTROLA CMS POZADINE (Potpuno popravlja glitch bijelog ekrana)
+        if(targetId === 'cms') {
+            mainHeader.style.display = 'none';
+            mainFooter.style.display = 'none';
+            globalBottomSections.style.display = 'none';
+            
+            // Makni paddding s maina i postavi skroz tamnu pozadinu na body
+            mainContainer.classList.remove('pt-[104px]', 'lg:pt-[128px]');
+            document.body.classList.add('bg-[#0a0c10]');
+            document.body.classList.remove('bg-[#f8f9ff]');
+        } else if (targetId === 'kosarica') {
+            mainHeader.style.display = 'block';
+            mainFooter.style.display = 'block';
+            globalBottomSections.style.display = 'none'; // Sakrijemo kalkulator i pitanja u košarici
+            
+            mainContainer.classList.add('pt-[104px]', 'lg:pt-[128px]');
+            document.body.classList.remove('bg-[#0a0c10]');
+            document.body.classList.add('bg-[#f8f9ff]');
+        } else {
+            mainHeader.style.display = 'block';
+            mainFooter.style.display = 'block';
+            globalBottomSections.style.display = 'block';
+            
+            mainContainer.classList.add('pt-[104px]', 'lg:pt-[128px]');
+            document.body.classList.remove('bg-[#0a0c10]');
+            document.body.classList.add('bg-[#f8f9ff]');
+        }
+
+        // Zatvori mobilni izbornik ako je otvoren
+        if (mobileDrawer && !mobileDrawer.classList.contains('hidden')) {
+          mobileDrawer.classList.add('hidden');
+          if (menuIcon) menuIcon.textContent = 'menu';
+        }
+      }
+
+      navTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const target = btn.getAttribute('data-target');
+          if (target) {
+            e.preventDefault();
+            switchView(target);
+          }
+        });
+      });
+
+      // 2. Mobilni Izbornik
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      if (mobileMenuBtn && mobileDrawer) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isHidden = mobileDrawer.classList.contains('hidden');
+          if (isHidden) {
+            mobileDrawer.classList.remove('hidden');
+            menuIcon.textContent = 'close';
+          } else {
+            mobileDrawer.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+          }
+        });
+      }
+
+      // 3. Filteri u katalogu (Stolice)
+      const filterPills = document.querySelectorAll('.filter-pill');
+      const productCards = document.querySelectorAll('.product-item');
+      const catalogCount = document.getElementById('catalog-count');
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => {
+            p.classList.remove('bg-surface-dark', 'text-white');
+            p.classList.add('bg-slate-100', 'text-slate-600');
+          });
+          pill.classList.add('bg-surface-dark', 'text-white');
+          pill.classList.remove('bg-slate-100', 'text-slate-600');
+
+          const filter = pill.getAttribute('data-filter');
+          let visibleCount = 0;
+
+          productCards.forEach(card => {
+            const categories = card.getAttribute('data-category') || '';
+            if (filter === 'all' || categories.includes(filter)) {
+              card.style.display = 'flex';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (catalogCount) {
+            catalogCount.textContent = `${visibleCount} artikala`;
+          }
+        });
+      });
+
+      // 4. Košarica Toast & Zbrajanje
+      let cartCount = 2;
+      const cartBadge = document.getElementById('cart-badge-count');
+      const toast = document.getElementById('cart-toast');
+      let toastTimer;
+
+      document.querySelectorAll('.add-to-cart-trigger').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation(); 
+          cartCount++;
+          if (cartBadge) cartBadge.textContent = cartCount;
+
+          if (toast) {
+            clearTimeout(toastTimer);
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            toastTimer = setTimeout(() => {
+              toast.classList.remove('translate-y-0', 'opacity-100');
+              toast.classList.add('translate-y-32', 'opacity-0');
+            }, 3000);
+          }
+        });
+      });
+
+      // Lista Želja Toggle
+      document.querySelectorAll('.wishlist-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const icon = btn.querySelector('.material-symbols-outlined');
+          if (icon) {
+            const isFilled = icon.style.fontVariationSettings?.includes("'FILL' 1");
+            if (isFilled) {
+              icon.style.fontVariationSettings = "'FILL' 0";
+              icon.classList.remove('text-red-500');
+            } else {
+              icon.style.fontVariationSettings = "'FILL' 1";
+              icon.classList.add('text-red-500');
+            }
+          }
+        });
+      });
+
+      // 5. Interaktivni Kalkulator Popusta
+      const slider = document.getElementById('chair-slider');
+      const sliderVal = document.getElementById('slider-val');
+      const calcDiscount = document.getElementById('calc-discount');
+      const calcMsg = document.getElementById('calc-msg');
+      let currentDiscount = "12%";
+
+      if(slider) {
+          slider.addEventListener('input', (e) => {
+              const val = parseInt(e.target.value);
+              sliderVal.textContent = val + (val === 250 ? '+ kom' : ' kom');
+              
+              let newDiscount = "";
+              if(val < 25) {
+                  newDiscount = '5%';
+                  calcMsg.textContent = 'Standardni početni popust za manje ugostiteljske narudžbe i kafiće.';
+              } else if (val >= 25 && val < 50) {
+                  newDiscount = '12%';
+                  calcMsg.textContent = 'Odličan volumen! Uz 12% popusta ostvarujete značajnu uštedu. Idealan paket za restoranske terase.';
+              } else if (val >= 50 && val < 100) {
+                  newDiscount = '18%';
+                  calcMsg.textContent = 'Projektna razina popusta aktivirana. Uz stolice, preporučujemo dodavanje i adekvatnih stolova.';
+              } else {
+                  newDiscount = '25%';
+                  calcMsg.textContent = 'Maksimalni premium popust za hotele i velike investicije! Dobivate posebnog agenta i 3D tlocrt.';
+              }
+
+              // Dodavanje "Pop" Animacije na brojku samo kad se postotak promijeni
+              if(currentDiscount !== newDiscount) {
+                 calcDiscount.classList.remove('animate-popBounce');
+                 // Trigger reflow
+                 void calcDiscount.offsetWidth;
+                 calcDiscount.textContent = newDiscount;
+                 calcDiscount.classList.add('animate-popBounce');
+                 currentDiscount = newDiscount;
+              }
+          });
+      }
+
+      // Checkbox logika (Višestruki odabir na kalkulatoru) umjesto radija
+      const matCheckboxes = document.querySelectorAll('.mat-checkbox');
+      matCheckboxes.forEach(cb => {
+          cb.addEventListener('change', (e) => {
+              const label = e.target.closest('.mat-checkbox-label');
+              const icon = label.querySelector('.icon');
+              const text = label.querySelector('.text');
+              
+              if(e.target.checked) {
+                  label.classList.add('border-badge-hospitality-text', 'bg-badge-hospitality-bg');
+                  label.classList.remove('border-zinc-700', 'bg-surface-dark');
+                  icon.classList.add('text-badge-hospitality-text');
+                  icon.classList.remove('text-zinc-400');
+                  text.classList.add('text-white');
+                  text.classList.remove('text-zinc-400');
+              } else {
+                  label.classList.remove('border-badge-hospitality-text', 'bg-badge-hospitality-bg');
+                  label.classList.add('border-zinc-700', 'bg-surface-dark');
+                  icon.classList.remove('text-badge-hospitality-text');
+                  icon.classList.add('text-zinc-400');
+                  text.classList.remove('text-white');
+                  text.classList.add('text-zinc-400');
+              }
+          });
+      });
+
+      // FAQ Harmonika
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector('.material-symbols-outlined');
+          const isHidden = content.classList.contains('hidden');
+
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          document.querySelectorAll('.faq-toggle .material-symbols-outlined').forEach(i => i.classList.remove('rotate-180'));
+
+          if (isHidden) {
+            content.classList.remove('hidden');
+            if (icon) icon.classList.add('rotate-180');
+          }
+        });
+      });
+
+      // Slanje forme za Ponudu
+      const rfqForm = document.getElementById('shared-rfq-form');
+      if (rfqForm) {
+        rfqForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          alert('Zahvaljujemo na upitu! Vaš zahtjev za službenu ponudu s izraženim popustom je zaprimljen. Kontaktirat ćemo Vas u najkraćem roku.');
+          rfqForm.reset();
+        });
+      }
+
+      // 6. CMS Login Logika
+      const cmsLoginBtn = document.getElementById('cms-login-btn');
+      const cmsLoginScreen = document.getElementById('cms-login');
+      const cmsDashboard = document.getElementById('cms-dashboard');
+      
+      if(cmsLoginBtn) {
+          cmsLoginBtn.addEventListener('click', () => {
+              cmsLoginBtn.innerHTML = '<span class="material-symbols-outlined animate-spin" style="animation: spin 1s linear infinite;">sync</span> Provjera...';
+              setTimeout(() => {
+                  cmsLoginScreen.classList.add('hidden');
+                  cmsDashboard.classList.remove('hidden');
+                  cmsLoginBtn.innerHTML = 'Autentifikacija <span class="material-symbols-outlined text-[18px]">login</span>';
+              }, 800);
+          });
+      }
+
+    })();
+  </script>
+</body>
+</html>
